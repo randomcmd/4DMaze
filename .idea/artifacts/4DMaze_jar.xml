@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="4DMaze:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/4DMaze_jar</output-path>
+    <root id="archive" name="JavaBasic3DEngine.jar">
+      <element id="module-output" name="4DMaze" />
+    </root>
+  </artifact>
+</component>
