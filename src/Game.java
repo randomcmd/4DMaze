@@ -62,7 +62,7 @@ public class Game extends JFrame implements Runnable {
 
     private synchronized void start() {
         running = true;
-        new Music().play("src/music/tempmusic.wav");
+        if(Settings.music) new Music().play("src/music/tempmusic.wav");
         fpsCounter = new FPSCounter();
         fpsCounter.start();
         //new Music().play("src/music/drodolf1.wav");

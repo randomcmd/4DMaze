@@ -17,4 +17,8 @@ public abstract class Settings {
 
     //Check for collision before teleporting?
     public static boolean check_collision_preport = true;
+
+    //Play music?
+    public static boolean music = true;
+
 }
