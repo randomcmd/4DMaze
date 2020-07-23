@@ -22,6 +22,7 @@ public class Game extends JFrame implements Runnable {
 
     public static int[][] map;
 
+    //Hello person reading my code :D
     public Game() {
         //Setup + Window
         thread = new Thread(this);
