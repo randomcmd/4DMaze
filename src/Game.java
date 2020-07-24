@@ -37,7 +37,8 @@ public class Game extends JFrame implements Runnable {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBackground(Color.black);
         setLocationRelativeTo(null);
-        setIconImage(new ImageIcon("src/textures/icon.png").getImage());
+        File iconFile = new File(getClass().getResource("textures/icon.png").getPath());
+        setIconImage(new ImageIcon(iconFile.getPath()).getImage());
 
         //Hiding cursor
         BufferedImage cursorImg = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
@@ -62,7 +63,8 @@ public class Game extends JFrame implements Runnable {
 
     private synchronized void start() {
         running = true;
-        if(Settings.music) new Music().play("src/music/drodolf2.wav");
+        System.out.println();
+        if(Settings.music) new Music().play("music/drodolf2.wav");
         fpsCounter = new FPSCounter();
         fpsCounter.start();
         //new Music().play("src/music/drodolf1.wav");

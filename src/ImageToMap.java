@@ -6,11 +6,11 @@ import java.util.Arrays;
 
 public class ImageToMap {
     //src/
-    public static String mapPath = "src/maps/";
+    public static String mapPath = "maps/";
 
     public static int[][] imageToMap(String filePath) {
         try {
-            BufferedImage image = ImageIO.read(new File(mapPath + filePath));
+            BufferedImage image = ImageIO.read(new File(    ImageToMap.class.getResource(mapPath + filePath).getPath()    )  );
             int[][] map = new int[image.getWidth()][image.getHeight()];
 
             //Iterating through image

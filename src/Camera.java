@@ -8,7 +8,7 @@ public class Camera implements KeyListener{
     public double normalSpeed = 0.035;
     public double crouchSpeed = 0.02;
     public double sprintSpeed = 0.8;
-    public double MOVE_SPEED = .04;
+    public double MOVE_SPEED = normalSpeed;
     public double ROTATION_SPEED = .03;
 
     Game game;

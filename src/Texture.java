@@ -19,7 +19,7 @@ public class Texture {
 
     private void load() {
         try {
-            BufferedImage image = ImageIO.read(new File(loc));
+            BufferedImage image = ImageIO.read(new File(getClass().getResource(loc).getPath()));
             int w = image.getWidth();
             int h = image.getHeight();
             image.getRGB(0, 0, w, h, pixels, 0, w);
@@ -29,7 +29,7 @@ public class Texture {
     }
 
     //Create Texture Array List "src/"
-    static String texturePath = "src/textures/";
+    static String texturePath = "textures/";
     public static ArrayList<Texture> textures = new ArrayList<>();
     static {
         textures.add(new Texture(texturePath + "red.png", 64));

@@ -7,9 +7,9 @@ public class Music implements LineListener, Runnable{
     boolean playCompleted;
     public synchronized void playMusicLoop(String file)
     {
-        File audioFile = new File(file);
-
+        File audioFile = new File(getClass().getResource(file).getPath());
         try {
+            //Mostly init
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
 
             AudioFormat format = audioStream.getFormat();
@@ -22,6 +22,11 @@ public class Music implements LineListener, Runnable{
 
             audioClip.open(audioStream);
 
+            //Volume adjustement
+            FloatControl gainControl = (FloatControl) audioClip.getControl(FloatControl.Type.MASTER_GAIN);
+            double gain = 0.25;
+            float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
+            gainControl.setValue(dB);
             audioClip.loop(999);
 
             while (!playCompleted) {
